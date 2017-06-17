@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListViewController.h
 //  prRSS
 //
 //  Created by Miguel Gallego on 17/6/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ListViewController : UIViewController
 
 @end
-
