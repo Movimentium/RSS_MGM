@@ -1,20 +1,18 @@
 //
-//  ListViewController.m
+//  DetailViewController.m
 //  prRSS
 //
 //  Created by Miguel Gallego on 17/6/17.
 //  Copyright © 2017 Miguel Gallego. All rights reserved.
 //
 
-#import "ListViewController.h"
+#import "DetailViewController.h"
 
-@interface ListViewController ()
-
-@property (weak, nonatomic) IBOutlet UITableView *tableMovies;
+@interface DetailViewController ()
 
 @end
 
-@implementation ListViewController
+@implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
