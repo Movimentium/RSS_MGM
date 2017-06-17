@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "AppManager.h"
 
 @interface ListViewController ()
 
@@ -14,11 +15,18 @@
 
 @end
 
-@implementation ListViewController
+@implementation ListViewController {
+    AppManager *_appManager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _appManager = [AppManager singleInstance];
+    [self loadData]; 
+}
+
+-(void)loadData {
+    [_appManager loadData];
 }
 
 - (void)didReceiveMemoryWarning {

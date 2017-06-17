@@ -17,6 +17,8 @@
 		492EFE6A1EF5AFE400C78291 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492EFE691EF5AFE400C78291 /* DetailViewController.m */; };
 		498044591EF5CA2C006A076B /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498044571EF5CA2C006A076B /* MovieTableViewCell.m */; };
 		4980445A1EF5CA2C006A076B /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498044581EF5CA2C006A076B /* MovieTableViewCell.xib */; };
+		4980445D1EF5CBAD006A076B /* RESTconnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980445C1EF5CBAD006A076B /* RESTconnector.m */; };
+		498044601EF5DCEB006A076B /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980445F1EF5DCEB006A076B /* AppManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		498044561EF5CA2C006A076B /* MovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTableViewCell.h; path = Views/MovieTableViewCell.h; sourceTree = "<group>"; };
 		498044571EF5CA2C006A076B /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTableViewCell.m; path = Views/MovieTableViewCell.m; sourceTree = "<group>"; };
 		498044581EF5CA2C006A076B /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieTableViewCell.xib; path = Views/MovieTableViewCell.xib; sourceTree = "<group>"; };
+		4980445B1EF5CBAD006A076B /* RESTconnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTconnector.h; sourceTree = "<group>"; };
+		4980445C1EF5CBAD006A076B /* RESTconnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTconnector.m; sourceTree = "<group>"; };
+		4980445E1EF5DCEB006A076B /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		4980445F1EF5DCEB006A076B /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		ACF6C716D5ADAD63008FD100 /* Pods-prRSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prRSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-prRSS/Pods-prRSS.release.xcconfig"; sourceTree = "<group>"; };
 		CF700429D225643607553A18 /* Pods-prRSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prRSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prRSS/Pods-prRSS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +121,8 @@
 		492EFE601EF5ADFD00C78291 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				4980445E1EF5DCEB006A076B /* AppManager.h */,
+				4980445F1EF5DCEB006A076B /* AppManager.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -129,6 +137,8 @@
 		492EFE621EF5ADFD00C78291 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4980445B1EF5CBAD006A076B /* RESTconnector.h */,
+				4980445C1EF5CBAD006A076B /* RESTconnector.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -283,7 +293,9 @@
 				492EFE4E1EF5A2B500C78291 /* AppDelegate.m in Sources */,
 				492EFE4B1EF5A2B500C78291 /* main.m in Sources */,
 				492EFE671EF5AEE100C78291 /* ListViewController.m in Sources */,
+				4980445D1EF5CBAD006A076B /* RESTconnector.m in Sources */,
 				498044591EF5CA2C006A076B /* MovieTableViewCell.m in Sources */,
+				498044601EF5DCEB006A076B /* AppManager.m in Sources */,
 				492EFE6A1EF5AFE400C78291 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
