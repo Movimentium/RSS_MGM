@@ -1,6 +1,5 @@
 //
 //  MMsgViewController.m
-//  MyWeather
 //
 //  Created by Miguel Gallego on 18/4/17.
 //  Copyright © 2017 Miguel Gallego. All rights reserved.
@@ -59,14 +58,16 @@
 
 - (IBAction)onBtn:(UIButton*)sender {
     BOOL isBtnCloseTapped = (sender.tag == kTagBtnClose);
-    self.completion(isBtnCloseTapped);
-    
     _constrToTop.constant = [UIScreen mainScreen].bounds.size.height;
     [UIView animateWithDuration:kAnimTime animations:^{
         [self.view layoutIfNeeded];
         self.view.backgroundColor = [UIColor clearColor];
     } completion:^(BOOL finished) {
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self dismissViewControllerAnimated:NO completion:^{
+            if (self.completion) {
+                self.completion(isBtnCloseTapped);
+            }
+        }];
     }];
 }
 @end

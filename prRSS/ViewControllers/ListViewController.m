@@ -10,6 +10,7 @@
 #import "AppManager.h"
 #import "WaitViewController.h"
 #import "TableMoviesDSD.h"
+#import "MMsgViewController.h"
 
 @interface ListViewController () <AppManagerDelegate,TableMoviesDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableMovies;
@@ -59,7 +60,12 @@
     }
     else {
         [_waitVC hideAnimated:NO];
-
+        [MMsgViewController showOverViewController:self
+                                             title:@"Error"
+                                       description:@"No se ha podido\nobtener datos"
+                                          btnTitle:@"Aceptar"
+                                    btnCloseHidden:YES
+                                        completion:nil]; 
     }
 }
 
