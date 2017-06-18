@@ -27,12 +27,13 @@
     NSArray *subArr = dicJSON[@"link"];
     subDic = subArr.firstObject;
     subDic = subDic[@"attributes"];
-    _url = [NSURL URLWithString:subDic[@"href"]];
+    NSString *strURL = subDic[@"href"];
+    //strURL = [strURL stringByReplacingOccurrencesOfString:@"/us/" withString:@"/es/"];
+    _url = [NSURL URLWithString:strURL];
     subDic = dicJSON[@"im:releaseDate"];
     _date = [[Utils singleInstance] dateFromString:subDic[@"label"]];
     subArr = dicJSON[@"im:image"];
     subDic = subArr.lastObject;
-    NSLog(subDic[@"label"]); 
     _img = [[Utils singleInstance] imageFromStrURL:subDic[@"label"]];
     return self;
 }

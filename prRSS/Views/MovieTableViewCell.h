@@ -11,7 +11,7 @@
 @interface MovieTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UILabel *lblDescription;
+@property (weak, nonatomic) IBOutlet UILabel *lblSummary;
 @property (weak, nonatomic) IBOutlet UIImageView *imgVw;
 
 @end

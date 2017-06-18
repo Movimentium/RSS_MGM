@@ -41,8 +41,8 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="41" id="lFK-Pf-BNT"/>
                         </constraints>
-                        <string key="text">Description 
-description</string>
+                        <string key="text">Summary
+summary</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@ description</string>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imgVw" destination="ka6-pt-CxE" id="rdd-vp-vtU"/>
-                <outlet property="lblDescription" destination="uf1-gz-etz" id="3j2-Jf-UYt"/>
+                <outlet property="lblSummary" destination="uf1-gz-etz" id="vUr-HW-owT"/>
                 <outlet property="lblTitle" destination="DZ1-iX-QEV" id="bzX-pc-ydj"/>
             </connections>
             <point key="canvasLocation" x="49.5" y="-151"/>

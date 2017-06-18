@@ -32,7 +32,7 @@ static NSString *strCellId = @"MovieCell";
     MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strCellId forIndexPath:indexPath];
     Movie *movie = [AppManager singleInstance].arrMovies[indexPath.row];
     cell.lblTitle.text = movie.title;
-    cell.lblDescription.text = movie.summary;
+    cell.lblSummary.text = movie.summary;
     cell.imgVw.image = movie.img;
     return cell;
 }

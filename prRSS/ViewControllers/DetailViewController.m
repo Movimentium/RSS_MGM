@@ -7,16 +7,36 @@
 //
 
 #import "DetailViewController.h"
+#import "AppManager.h"
+#import "Utils.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblDate;
+@property (weak, nonatomic) IBOutlet UIImageView *imgVw;
+@property (weak, nonatomic) IBOutlet UILabel *lblSummary;
 
 @end
 
-@implementation DetailViewController
+@implementation DetailViewController {
+    AppManager *_appManager;
+    Movie *_movie; 
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _appManager = [AppManager singleInstance];
+    _movie = _appManager.arrMovies[_appManager.idxMovieSelected];
+    _lblTitle.text = _movie.title;
+    _lblDate.text = [[Utils singleInstance] strFromDate:_movie.date];
+    _lblSummary.text = _movie.summary;
+    _imgVw.image = _movie.img; 
+}
+
+- (IBAction)onBtnSeeOnBrowser {
+    [[UIApplication sharedApplication] openURL:_movie.url
+                                       options:[NSDictionary new]
+                             completionHandler:nil];
 }
 
 - (void)didReceiveMemoryWarning {
