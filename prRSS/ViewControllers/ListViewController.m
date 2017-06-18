@@ -9,16 +9,16 @@
 #import "ListViewController.h"
 #import "AppManager.h"
 #import "WaitViewController.h"
+#import "TableMoviesDSD.h"
 
-@interface ListViewController () <AppManagerDelegate>
-
+@interface ListViewController () <AppManagerDelegate,TableMoviesDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableMovies;
-
 @end
 
 @implementation ListViewController {
     AppManager *_appManager;
     WaitViewController *_waitVC;
+    TableMoviesDSD *_tableMoviesDSD;
 }
 
 - (void)viewDidLoad {
@@ -27,7 +27,8 @@
     _waitVC = [WaitViewController newWaitViewOverViewController:self];
     _appManager = [AppManager singleInstance];
     _appManager.delegate = self;
-    
+    _tableMoviesDSD = [TableMoviesDSD new];
+    _tableMoviesDSD.delegate = self;
     [self loadData];
 }
 
@@ -45,6 +46,26 @@
     }];
 }
 
+
+#pragma mark - AppManagerDelegate
+
+-(void)appManager_didFillData:(BOOL)isDataFilled withError:(NSError *)error {
+    [_waitVC hide];
+    if (isDataFilled) {    NSLog(@"%s  %@",__PRETTY_FUNCTION__,@" Data Filled");
+        _tableMovies.dataSource = _tableMoviesDSD;
+        _tableMovies.delegate = _tableMoviesDSD;
+        [_tableMovies reloadData]; 
+        [self showTable:YES animated:YES];
+    }
+}
+
+#pragma mark - TableMoviesDelegate
+
+-(void)tableMoviesDidSelectRow:(NSInteger)row {
+    _appManager.idxMovieSelected = row;
+    [self performSegueWithIdentifier:@"showDetail" sender:nil];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -54,14 +75,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-#pragma mark - AppManagerDelegate
-
--(void)appManager_didFillData:(BOOL)isDataFilled withError:(NSError *)error {
-    [_waitVC hide];
-    if (isDataFilled) {    NSLog(@"%s",__PRETTY_FUNCTION__);
-        
-    }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

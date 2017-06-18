@@ -58,6 +58,7 @@ static AppManager *_theSingleton;
     for (NSDictionary *dicEntry in arrEntries) {
         [_arrMovies addObject:[[Movie alloc] initWithJSON:dicEntry]];
     }
+    [_arrMovies sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
     [self parseDebug];
     [self.delegate appManager_didFillData:YES withError:nil];
 }
@@ -65,6 +66,9 @@ static AppManager *_theSingleton;
 -(void)parseDebug {
     for (Movie *movie in self.arrMovies) {
         NSLog(@"%@",movie.debugDescription);
+    }
+    for (Movie *movie in self.arrMovies) {
+        NSLog(@"%@",movie.date);
     }
 }
 @end

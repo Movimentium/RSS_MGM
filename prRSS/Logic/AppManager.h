@@ -18,6 +18,7 @@
 
 @interface AppManager : NSObject
 
+@property (nonatomic) NSInteger idxMovieSelected;
 @property (nonatomic, readonly) NSMutableArray<Movie *> *arrMovies;
 @property (weak, nonatomic) id<AppManagerDelegate> delegate;
 +(AppManager*)singleInstance;

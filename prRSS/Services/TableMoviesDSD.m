@@ -10,15 +10,25 @@
 #import "MovieTableViewCell.h"
 #import "AppManager.h"
 
-@implementation TableMoviesDSD
+@implementation TableMoviesDSD {
+    BOOL _isTableConfigured;
+}
+static NSString *strCellId = @"MovieCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_isTableConfigured == NO) {
+        [tableView registerNib:[UINib nibWithNibName:@"MovieTableViewCell"
+                                              bundle:nil] forCellReuseIdentifier:strCellId];
+        tableView.rowHeight = 104.0;
+        tableView.separatorInset = UIEdgeInsetsZero; 
+        _isTableConfigured = YES;
+    }
     return [AppManager singleInstance].arrMovies.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *strCellId = @"MovieCell";
+    
     MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strCellId forIndexPath:indexPath];
     Movie *movie = [AppManager singleInstance].arrMovies[indexPath.row];
     cell.lblTitle.text = movie.title;
