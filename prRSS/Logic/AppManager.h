@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Movie.h"
 
 @interface AppManager : NSObject
+
+@property (nonatomic, readonly) NSMutableArray<Movie *> *arrMovies;
 
 +(AppManager*)singleInstance;
 -(void)loadData;

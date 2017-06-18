@@ -17,9 +17,8 @@
 @end
 
 @interface RESTconnector : NSObject
-
 @property (nonatomic, readonly) NSInteger operId;
-@property (nonatomic) NSDictionary* dicJSON;
+@property (nonatomic, readonly) NSDictionary* dicJSON;
 @property (weak, nonatomic) id<RESTconnectorDelegate> delegate;
 
 -(void)callBaseStrURL:(NSString*)strBaseURL

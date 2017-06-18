@@ -9,6 +9,7 @@
 #import "AppManager.h"
 #import "RESTconnector.h"
 
+
 @interface AppManager () <RESTconnectorDelegate>
 @end
 
@@ -38,12 +39,33 @@ static AppManager *_theSingleton;
                          fromOperationId:(NSInteger)operId
                                 andError:(NSError *)error
 {
-    NSLog(@"finish");
+    if (isFinishedOK) { NSLog(@"%s %@",__PRETTY_FUNCTION__,@"Finised OK");
+        [self parse];
+    }
+    else {              NSLog(@"%s %@",__PRETTY_FUNCTION__,@"Finised with ERROR");
+    
+    }
 }
 
--(void)RESTconnector_StartedOperationId:(NSInteger)operId {    NSLog(@"started");
+-(void)RESTconnector_StartedOperationId:(NSInteger)operId {
+    NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 
 
+-(void)parse {
+    NSDictionary *subDic = _RESTconn.dicJSON[@"feed"];
+    NSArray *arrEntries = subDic[@"entry"];
+    _arrMovies= [NSMutableArray new];
+    for (NSDictionary *dicEntry in arrEntries) {
+        [_arrMovies addObject:[[Movie alloc] initWithJSON:dicEntry]];
+    }
+    
+    for (Movie *movie in self.arrMovies) {
+        NSLog(@"%@",movie.debugDescription);
+    }
+}
 
+/*
+ NSURL *theURL = [NSURL URLWithString:strURLlogin];
+ [[UIApplication sharedApplication] openURL:theURL];*/
 @end

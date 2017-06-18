@@ -19,6 +19,9 @@
 		4980445A1EF5CA2C006A076B /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498044581EF5CA2C006A076B /* MovieTableViewCell.xib */; };
 		4980445D1EF5CBAD006A076B /* RESTconnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980445C1EF5CBAD006A076B /* RESTconnector.m */; };
 		498044601EF5DCEB006A076B /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980445F1EF5DCEB006A076B /* AppManager.m */; };
+		498044631EF5E775006A076B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 498044621EF5E775006A076B /* Movie.m */; };
+		498ABFF31EF6D58800175393 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 498ABFF21EF6D58800175393 /* Utils.m */; };
+		498DDD4D1EF6027D00189A8C /* TableMoviesDSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 498DDD4C1EF6027D00189A8C /* TableMoviesDSD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,12 @@
 		4980445C1EF5CBAD006A076B /* RESTconnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTconnector.m; sourceTree = "<group>"; };
 		4980445E1EF5DCEB006A076B /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		4980445F1EF5DCEB006A076B /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		498044611EF5E775006A076B /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		498044621EF5E775006A076B /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		498ABFF11EF6D58800175393 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		498ABFF21EF6D58800175393 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		498DDD4B1EF6027D00189A8C /* TableMoviesDSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableMoviesDSD.h; sourceTree = "<group>"; };
+		498DDD4C1EF6027D00189A8C /* TableMoviesDSD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableMoviesDSD.m; sourceTree = "<group>"; };
 		ACF6C716D5ADAD63008FD100 /* Pods-prRSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prRSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-prRSS/Pods-prRSS.release.xcconfig"; sourceTree = "<group>"; };
 		CF700429D225643607553A18 /* Pods-prRSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prRSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prRSS/Pods-prRSS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +139,8 @@
 		492EFE611EF5ADFD00C78291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				498044611EF5E775006A076B /* Movie.h */,
+				498044621EF5E775006A076B /* Movie.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,8 +148,12 @@
 		492EFE621EF5ADFD00C78291 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				498ABFF11EF6D58800175393 /* Utils.h */,
+				498ABFF21EF6D58800175393 /* Utils.m */,
 				4980445B1EF5CBAD006A076B /* RESTconnector.h */,
 				4980445C1EF5CBAD006A076B /* RESTconnector.m */,
+				498DDD4B1EF6027D00189A8C /* TableMoviesDSD.h */,
+				498DDD4C1EF6027D00189A8C /* TableMoviesDSD.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,10 +307,13 @@
 			files = (
 				492EFE4E1EF5A2B500C78291 /* AppDelegate.m in Sources */,
 				492EFE4B1EF5A2B500C78291 /* main.m in Sources */,
+				498044631EF5E775006A076B /* Movie.m in Sources */,
+				498ABFF31EF6D58800175393 /* Utils.m in Sources */,
 				492EFE671EF5AEE100C78291 /* ListViewController.m in Sources */,
 				4980445D1EF5CBAD006A076B /* RESTconnector.m in Sources */,
 				498044591EF5CA2C006A076B /* MovieTableViewCell.m in Sources */,
 				498044601EF5DCEB006A076B /* AppManager.m in Sources */,
+				498DDD4D1EF6027D00189A8C /* TableMoviesDSD.m in Sources */,
 				492EFE6A1EF5AFE400C78291 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

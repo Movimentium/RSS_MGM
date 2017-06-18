@@ -29,11 +29,12 @@
                                                  fromOperationId:operId
                                                         andError:error];
         }
-        else {
+        else {      //NSLog(@"JSON: %@", responseObject);
+            _dicJSON = responseObject;
             [weakSelf.delegate RESTconnector_DidFinishWithResult:YES
                                                  fromOperationId:operId
                                                         andError:nil];
-            NSLog(@"JSON: %@", responseObject);
+            
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"ERROR: %@",error);
