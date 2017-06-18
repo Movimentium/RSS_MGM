@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "Movie.h"
 
+@protocol AppManagerDelegate <NSObject>
+
+-(void)appManager_didFillData:(BOOL) isDataFilled
+                    withError:(NSError*)error;
+@end
+
+
 @interface AppManager : NSObject
 
 @property (nonatomic, readonly) NSMutableArray<Movie *> *arrMovies;
-
+@property (weak, nonatomic) id<AppManagerDelegate> delegate;
 +(AppManager*)singleInstance;
 -(void)loadData;
 

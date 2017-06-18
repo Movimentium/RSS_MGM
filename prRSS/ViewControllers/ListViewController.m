@@ -8,8 +8,9 @@
 
 #import "ListViewController.h"
 #import "AppManager.h"
+#import "WaitViewController.h"
 
-@interface ListViewController ()
+@interface ListViewController () <AppManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableMovies;
 
@@ -17,21 +18,31 @@
 
 @implementation ListViewController {
     AppManager *_appManager;
+    WaitViewController *_waitVC;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self showTable:NO animated:NO];
+    _waitVC = [WaitViewController newWaitViewOverViewController:self];
     _appManager = [AppManager singleInstance];
-    [self loadData]; 
+    _appManager.delegate = self;
+    
+    [self loadData];
 }
 
 -(void)loadData {
-    [_appManager loadData];
+    [_waitVC showCompletion:^{
+        [_appManager loadData];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)showTable:(BOOL)isToShow animated:(BOOL)animated {
+    float alpha = isToShow;
+    float animTime = animated ? 0.25 : 0.0;
+    [UIView animateWithDuration:animTime animations:^{
+        _tableMovies.alpha = alpha;
+    }];
 }
 
 /*
@@ -43,5 +54,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - AppManagerDelegate
+
+-(void)appManager_didFillData:(BOOL)isDataFilled withError:(NSError *)error {
+    [_waitVC hide];
+    if (isDataFilled) {    NSLog(@"%s",__PRETTY_FUNCTION__);
+        
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

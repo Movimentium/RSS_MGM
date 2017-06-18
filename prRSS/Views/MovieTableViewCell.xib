@@ -61,7 +61,7 @@ description</string>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="img" destination="ka6-pt-CxE" id="urS-EM-BZs"/>
+                <outlet property="imgVw" destination="ka6-pt-CxE" id="rdd-vp-vtU"/>
                 <outlet property="lblDescription" destination="uf1-gz-etz" id="3j2-Jf-UYt"/>
                 <outlet property="lblTitle" destination="DZ1-iX-QEV" id="bzX-pc-ydj"/>
             </connections>

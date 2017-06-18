@@ -9,7 +9,6 @@
 #import "AppManager.h"
 #import "RESTconnector.h"
 
-
 @interface AppManager () <RESTconnectorDelegate>
 @end
 
@@ -34,7 +33,6 @@ static AppManager *_theSingleton;
 }
 
 # pragma mark - RESTconnectorDelegate ============================
-
 -(void)RESTconnector_DidFinishWithResult:(BOOL)isFinishedOK
                          fromOperationId:(NSInteger)operId
                                 andError:(NSError *)error
@@ -43,7 +41,8 @@ static AppManager *_theSingleton;
         [self parse];
     }
     else {              NSLog(@"%s %@",__PRETTY_FUNCTION__,@"Finised with ERROR");
-    
+        //TODO offline mode
+        [self.delegate appManager_didFillData:NO withError:error];
     }
 }
 
@@ -59,13 +58,13 @@ static AppManager *_theSingleton;
     for (NSDictionary *dicEntry in arrEntries) {
         [_arrMovies addObject:[[Movie alloc] initWithJSON:dicEntry]];
     }
-    
+    [self parseDebug];
+    [self.delegate appManager_didFillData:YES withError:nil];
+}
+
+-(void)parseDebug {
     for (Movie *movie in self.arrMovies) {
         NSLog(@"%@",movie.debugDescription);
     }
 }
-
-/*
- NSURL *theURL = [NSURL URLWithString:strURLlogin];
- [[UIApplication sharedApplication] openURL:theURL];*/
 @end

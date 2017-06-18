@@ -21,6 +21,8 @@
 		498044601EF5DCEB006A076B /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980445F1EF5DCEB006A076B /* AppManager.m */; };
 		498044631EF5E775006A076B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 498044621EF5E775006A076B /* Movie.m */; };
 		498ABFF31EF6D58800175393 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 498ABFF21EF6D58800175393 /* Utils.m */; };
+		498ABFF71EF6EDAE00175393 /* WaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498ABFF51EF6EDAE00175393 /* WaitViewController.m */; };
+		498ABFFA1EF6EDE100175393 /* WaitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498ABFF91EF6EDE100175393 /* WaitViewController.xib */; };
 		498DDD4D1EF6027D00189A8C /* TableMoviesDSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 498DDD4C1EF6027D00189A8C /* TableMoviesDSD.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,9 @@
 		498044621EF5E775006A076B /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		498ABFF11EF6D58800175393 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		498ABFF21EF6D58800175393 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		498ABFF41EF6EDAE00175393 /* WaitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitViewController.h; sourceTree = "<group>"; };
+		498ABFF51EF6EDAE00175393 /* WaitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitViewController.m; sourceTree = "<group>"; };
+		498ABFF91EF6EDE100175393 /* WaitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WaitViewController.xib; path = Views/WaitViewController.xib; sourceTree = "<group>"; };
 		498DDD4B1EF6027D00189A8C /* TableMoviesDSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableMoviesDSD.h; sourceTree = "<group>"; };
 		498DDD4C1EF6027D00189A8C /* TableMoviesDSD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableMoviesDSD.m; sourceTree = "<group>"; };
 		ACF6C716D5ADAD63008FD100 /* Pods-prRSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prRSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-prRSS/Pods-prRSS.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +170,8 @@
 				492EFE661EF5AEE100C78291 /* ListViewController.m */,
 				492EFE681EF5AFE400C78291 /* DetailViewController.h */,
 				492EFE691EF5AFE400C78291 /* DetailViewController.m */,
+				498ABFF41EF6EDAE00175393 /* WaitViewController.h */,
+				498ABFF51EF6EDAE00175393 /* WaitViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 				498044561EF5CA2C006A076B /* MovieTableViewCell.h */,
 				498044571EF5CA2C006A076B /* MovieTableViewCell.m */,
 				498044581EF5CA2C006A076B /* MovieTableViewCell.xib */,
+				498ABFF91EF6EDE100175393 /* WaitViewController.xib */,
 				492EFE571EF5A2B500C78291 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -244,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				492EFE591EF5A2B500C78291 /* LaunchScreen.storyboard in Resources */,
+				498ABFFA1EF6EDE100175393 /* WaitViewController.xib in Resources */,
 				492EFE561EF5A2B500C78291 /* Assets.xcassets in Resources */,
 				4980445A1EF5CA2C006A076B /* MovieTableViewCell.xib in Resources */,
 				492EFE541EF5A2B500C78291 /* Main.storyboard in Resources */,
@@ -313,6 +322,7 @@
 				4980445D1EF5CBAD006A076B /* RESTconnector.m in Sources */,
 				498044591EF5CA2C006A076B /* MovieTableViewCell.m in Sources */,
 				498044601EF5DCEB006A076B /* AppManager.m in Sources */,
+				498ABFF71EF6EDAE00175393 /* WaitViewController.m in Sources */,
 				498DDD4D1EF6027D00189A8C /* TableMoviesDSD.m in Sources */,
 				492EFE6A1EF5AFE400C78291 /* DetailViewController.m in Sources */,
 			);
