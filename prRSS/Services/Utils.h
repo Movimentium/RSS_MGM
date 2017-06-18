@@ -6,12 +6,13 @@
 //  Copyright © 2017 Miguel Gallego. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Utils : NSObject
 
 +(Utils*)singleInstance;
 -(NSDate*)dateFromString:(NSString*)strDate;
 -(NSString*)strFromDate:(NSDate*)aDate;
+-(UIImage*)imageFromStrURL:(NSString*)strURL;
 
 @end

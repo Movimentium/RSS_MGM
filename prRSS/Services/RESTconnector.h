@@ -6,7 +6,7 @@
 //  Copyright © 2017 Miguel Gallego. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol RESTconnectorDelegate <NSObject>
 
@@ -24,5 +24,4 @@
 -(void)callBaseStrURL:(NSString*)strBaseURL
         withDicParams:(NSDictionary*)dicParams
        andOperationId:(NSInteger)operId;
-
 @end

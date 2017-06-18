@@ -37,4 +37,10 @@ static Utils* _theSingleton;
     return [_formatter stringFromDate:aDate];
 }
 
+-(UIImage*)imageFromStrURL:(NSString *)strURL {
+    NSURL *imgURL = [NSURL URLWithString:strURL];
+    NSData *data = [NSData dataWithContentsOfURL:imgURL];
+    return [UIImage imageWithData:data];
+}
+
 @end

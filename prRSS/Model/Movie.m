@@ -9,6 +9,7 @@
 #import "Movie.h"
 #import "Utils.h"
 
+
 @implementation Movie
 
 - (instancetype)initWithJSON:(NSDictionary*)dicJSON
@@ -29,9 +30,10 @@
     _url = [NSURL URLWithString:subDic[@"href"]];
     subDic = dicJSON[@"im:releaseDate"];
     _date = [[Utils singleInstance] dateFromString:subDic[@"label"]];
-    //TODO
-    //_img
-    
+    subArr = dicJSON[@"im:image"];
+    subDic = subArr.lastObject;
+    NSLog(subDic[@"label"]); 
+    _img = [[Utils singleInstance] imageFromStrURL:subDic[@"label"]];
     return self;
 }
 
