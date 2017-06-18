@@ -12,6 +12,5 @@
 
 +(WaitViewController*)newWaitViewOverViewController:(UIViewController*)vc;
 -(void)showCompletion:(void (^)())completion;
--(void)hide;
-
+-(void)hideAnimated:(BOOL)animated; 
 @end

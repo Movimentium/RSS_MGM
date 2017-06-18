@@ -37,8 +37,8 @@
     
 }
 
--(void)hide {
-    [self dismissViewControllerAnimated:YES completion:nil]; 
+-(void)hideAnimated:(BOOL)animated {
+    [self dismissViewControllerAnimated:animated completion:nil];
 }
 
 @end

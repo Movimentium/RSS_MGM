@@ -50,12 +50,16 @@
 #pragma mark - AppManagerDelegate
 
 -(void)appManager_didFillData:(BOOL)isDataFilled withError:(NSError *)error {
-    [_waitVC hide];
     if (isDataFilled) {    NSLog(@"%s  %@",__PRETTY_FUNCTION__,@" Data Filled");
+        [_waitVC hideAnimated:YES];
         _tableMovies.dataSource = _tableMoviesDSD;
         _tableMovies.delegate = _tableMoviesDSD;
         [_tableMovies reloadData]; 
         [self showTable:YES animated:YES];
+    }
+    else {
+        [_waitVC hideAnimated:NO];
+
     }
 }
 
