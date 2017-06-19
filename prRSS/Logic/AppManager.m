@@ -32,6 +32,8 @@ static AppManager *_theSingleton;
     [_RESTconn callBaseStrURL:_strURL withDicParams:nil andOperationId:1];
 }
 
+
+
 # pragma mark - RESTconnectorDelegate ============================
 -(void)RESTconnector_DidFinishWithResult:(BOOL)isFinishedOK
                          fromOperationId:(NSInteger)operId
@@ -41,7 +43,6 @@ static AppManager *_theSingleton;
         [self parse];
     }
     else {              NSLog(@"%s %@",__PRETTY_FUNCTION__,@"Finised with ERROR");
-        //TODO offline mode
         [self.delegate appManager_didFillData:NO withError:error];
     }
 }
@@ -49,7 +50,6 @@ static AppManager *_theSingleton;
 -(void)RESTconnector_StartedOperationId:(NSInteger)operId {
     NSLog(@"%s",__PRETTY_FUNCTION__);
 }
-
 
 -(void)parse {
     NSDictionary *subDic = _RESTconn.dicJSON[@"feed"];
@@ -71,4 +71,5 @@ static AppManager *_theSingleton;
         NSLog(@"%@",movie.date);
     }
 }
+
 @end
